@@ -1,0 +1,16 @@
+1. https://platform.stratascratch.com/coding/10299-finding-updated-records?code_type=1
+
+SELECT id, first_name, last_name, department_ID, MAX(salary) AS max_salary
+FROM ms_employee_salary
+GROUP BY id, first_name, last_name, department_ID
+ORDER BY id ASC
+
+2. https://platform.stratascratch.com/coding/9924-find-libraries-who-havent-provided-the-email-address-in-2016-but-their-notice-preference-definition-is-set-to-email?code_type=1
+select DISTINCT home_library_code from library_usage
+WHERE circulation_active_year = '2016' 
+AND notice_preference_definition = 'email' 
+AND provided_email_address = FALSE
+
+3. https://platform.stratascratch.com/coding/10003-lyft-driver-wages?code_type=1
+select * from lyft_drivers
+WHERE yearly_salary <= 30000 OR yearly_salary >= 70000
